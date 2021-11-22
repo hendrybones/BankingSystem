@@ -5,6 +5,7 @@ public class User {
     private String country;
     private String email;
 
+
     public User(String name, String country, String email) {
         this.name = name;
         this.country = country;

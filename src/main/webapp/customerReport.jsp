@@ -5,7 +5,6 @@
   Time: 12:55 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@include file="index.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>

@@ -28,14 +28,12 @@ public class Dao {
     }
 
     public  void insertUser(User user) throws SQLException {
-        try {
-            Connection connection=getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(InsertUser){
+        try (Connection connection=getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(InsertUser);){
                 preparedStatement.setString(1,user.getName());
                 preparedStatement.setString(2,user.getEmail());
                 preparedStatement.setString(3,user.getCountry());
                 preparedStatement.executeUpdate();
-            }
 
         }catch (Exception e){
             e.printStackTrace();
@@ -45,9 +43,8 @@ public class Dao {
 
     public boolean updateUser(User user) throws SQLException {
         boolean rowUpdated = false;
-        try {
-            Connection connection=getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(Update_User);
+        try (Connection connection=getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(Update_User);){
             preparedStatement.setString(1,user.getName());
             preparedStatement.setString(1,user.getEmail());
             preparedStatement.setString(1,user.getCountry());
@@ -61,9 +58,8 @@ public class Dao {
     }
     public List<User> selectAllUsers(){
         List<User> users=new ArrayList<>();
-        try {
-            Connection connection=getConnection();
-            PreparedStatement preparedStatement=connection.prepareStatement(SELECT_All_Users);{
+        try (Connection connection=getConnection();
+            PreparedStatement preparedStatement=connection.prepareStatement(SELECT_All_Users);){
                 System.out.println(preparedStatement);
                 ResultSet rs=preparedStatement.executeQuery();
 
@@ -73,24 +69,17 @@ public class Dao {
                     String country=rs.getString("country");
                     users.add(new User(name,email,country));
                 }
-            }
         }catch (Exception e){
             e.printStackTrace();
         }
         return users;
     }
     public  boolean deleteUser() throws SQLException {
-        boolean rowDeleted;
-        try {
-            Connection connection = getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER); {
+        boolean rowDeleted = false;
+        try (Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER);){
                 preparedStatement.setString(1, "name");
                 rowDeleted = preparedStatement.executeUpdate() > 0;
-            }
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
         }
         return rowDeleted;
     }
