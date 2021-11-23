@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>list of users</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,16 +16,22 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: tomato">
-        <div>
-            <a href="https://www.javaguides.net" class="navbar-brand"> User
-                Management App </a>
-        </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand">Reports/Statuses for bank users</a>
 
-        <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/list"
-                   class="nav-link">Users</a></li>
+        <!-- Links -->
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Welcome ${username}</a>
+            </li>
+            <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Users</a></li>
+            <li class="nav-item">
+                <form action="Logout"><button class="nav-link">Logout</button></form>
+            </li>
         </ul>
     </nav>
 </header>
@@ -39,8 +45,7 @@
         <hr>
         <div class="container text-left">
 
-            <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
-                New User</a>
+            <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add New User</a>
         </div>
         <br>
         <table class="table table-bordered">

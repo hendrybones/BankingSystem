@@ -16,6 +16,23 @@
 
 </head>
 <body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand">Reports/Statuses for bank users</a>
+
+    <!-- Links -->
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Welcome ${username}</a>
+        </li>
+        <li class="nav-item">
+            <form action="Logout"><button class="nav-link">Logout</button></form>
+        </li>
+    </ul>
+</nav>
 <h1><%= "Login here" %>
 </h1>
 <br/>

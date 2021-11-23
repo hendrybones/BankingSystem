@@ -1,17 +1,28 @@
 package com.example.BankingSystem;
 
 public class User {
-    private String name;
-    private String country;
-    private String email;
+    protected int id;
+    protected String name;
+    protected String email;
+    protected String country;
 
-
-    public User(String name, String country, String email) {
-        this.name = name;
-        this.country = country;
-        this.email = email;
+    public User() {
     }
 
+    public User(String name, String email, String country) {
+        super();
+        this.name = name;
+        this.email = email;
+        this.country = country;
+    }
+
+    public User(int id, String name, String email, String country) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.country = country;
+    }
     public String getName() {
         return name;
     }
@@ -36,3 +47,4 @@ public class User {
         this.email = email;
     }
 }
+

@@ -17,14 +17,21 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: tomato">
-        <div>
-            <a href="https://www.javaguides.net" class="navbar-brand"> User Management App </a>
-        </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand">Reports/Statuses for bank users</a>
 
-        <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Users</a></li>
+        <!-- Links -->
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Welcome ${username}</a>
+            </li>
+            <li class="nav-item">
+                <form action="Logout"><button class="nav-link">Logout</button></form>
+            </li>
         </ul>
     </nav>
 </header>
@@ -36,9 +43,9 @@
             <form action="update" method="post">
                 </c:if>
                 <c:if test="${user == null}">
-
                 <form action="insert" method="post">
                     </c:if>
+
                     <caption>
                         <h2>
                             <c:if test="${user != null}">
@@ -71,6 +78,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
