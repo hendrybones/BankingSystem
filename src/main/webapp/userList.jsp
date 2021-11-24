@@ -28,7 +28,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Welcome ${username}</a>
             </li>
-            <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Users</a></li>
+            <li>
+                <a href="<%=request.getContextPath()%>/edit" class="nav-link">Users</a></li>
             <li class="nav-item">
                 <form action="Logout"><button class="nav-link">Logout</button></form>
             </li>
@@ -44,7 +45,6 @@
         <h3 class="text-center">List of Users</h3>
         <hr>
         <div class="container text-left">
-
             <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add New User</a>
         </div>
         <br>

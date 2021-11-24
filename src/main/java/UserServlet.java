@@ -2,8 +2,8 @@ import com.example.BankingSystem.Dao;
 import com.example.BankingSystem.User;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
